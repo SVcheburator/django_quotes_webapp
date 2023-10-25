@@ -1,0 +1,25 @@
+{% extends "quotesapp/index.html" %}
+
+{% block content %}
+
+<nav class="quotes_nav" style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
+    <ul>
+        <li><a href="{% url 'quotesapp:quotes_list' %}" role="button" class="secondary outline">Show quotes</a></li>
+        <li><a href="{% url 'quotesapp:authors_list' %}" role="button">Show authors</a></li>
+    </ul>
+</nav>
+{% if quotes %}
+    <h1 style="height: 20px; text-align: center; color: white;">Quotes:</h1>
+    {% for quote in quotes %}
+    <ul>
+        <li>
+            <a style="max-width: 100%; margin: 5px;" href="{% url 'quotesapp:detail_q' quote.id %}" role="button" class="outline"> {{ quote.quote }} </a>
+            <a style="max-width: 100%; margin: 5px; color: red;" href="{% url 'quotesapp:delete_quote' quote.id %}" role="button" class="contrast outline"> Delete quote </a>
+        </li>
+    </ul>
+    {% endfor %}
+{% else %}
+    <p><b> You didn't add any quotes yet </b></p>
+{% endif %}
+
+{% endblock %}

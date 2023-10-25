@@ -1,0 +1,14 @@
+.alert-error, .errorlist {
+    color: crimson;
+}
+
+.alert-success {
+    color: green;
+}
+
+.main_nav {
+    margin-bottom: 20px; 
+    border-bottom: 5px solid; 
+    padding-left: 30px; 
+    border-color: white;
+}

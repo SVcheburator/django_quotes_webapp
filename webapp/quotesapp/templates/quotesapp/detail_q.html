@@ -1,0 +1,10 @@
+{% extends "quotesapp/base.html" %} {% load extract_author %} {% load extract_tags %} {% block content %}
+
+<p><b>Quote:</b> <i>{{ quote.quote }}</i></p>
+
+<p style="margin-top: 20px;"><b>Tags:</b> <small> {{ quote.tags|tags }} </small></p>
+
+<a style="margin-top: 30px;" href="{% url 'quotesapp:detail_a' quote.id 0 %}" role="button" class="outline"><b>Author:</b> {{ quote.author|author }} </a>
+
+
+{% endblock %}
