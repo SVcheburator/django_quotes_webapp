@@ -9,10 +9,10 @@ class Tag(models.Model):
 
 
 class Authors(models.Model):
-    fullname = models.CharField(max_length=30, null=False)
+    fullname = models.CharField(max_length=30, null=False, unique=True)
     born_date = models.DateTimeField(null=False)
     born_location = models.CharField(max_length=50, null=False)
-    description = models.CharField(max_length=150, null=False)
+    description = models.CharField(null=False)
 
     def __str__(self):
         return f"{self.fullname}"
@@ -21,7 +21,7 @@ class Authors(models.Model):
 class Quotes(models.Model):
     tags = models.ManyToManyField(Tag)
     author = models.ManyToManyField(Authors)
-    quote = models.CharField(null=False)
+    quote = models.CharField(null=False, unique=True)
 
     def __str__(self):
         return f"{self.quote}"

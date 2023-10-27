@@ -15,7 +15,7 @@
                 <li><a href="{% url 'quotesapp:author' %}" role="button">Add Author</a></li>
                 <li><a href="{% url 'quotesapp:tag' %}" role="button">Add Tag</a></li>
                 <li><a href="{% url 'quotesapp:quote' %}" role="button">Add quote</a></li>
-                <!-- <li><a>Welcome <b>{{ user.username }}!</b></a></li> -->
+                <li><a href="{% url 'quotesapp:add_default_data' %}" role="button" class="secondary">Add default data</a></li>
                 <li><a style="color: red;" href="{% url 'users:logout' %}" role="button" class="secondary outline">Logout</a></li>
             </ul>
         {% else %}

@@ -15,4 +15,5 @@ urlpatterns = [
     path('delete_quote/<int:quote_id>', views.delete_quote, name='delete_quote'),
     path('delete_author/<int:author_id>', views.delete_author, name='delete_author'),
     path('accounts/login/', users_views.loginuser, name='login'),
+    path('add_default_data/', views.add_default_data, name='add_default_data')
 ]
